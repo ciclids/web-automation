@@ -8,7 +8,7 @@ import { testsConfig } from './tests.config';
 
 export const config = {
   runner: 'local',
-  baseUrl: 'http://localhost',
+  baseUrl: 'http://172.17.0.6',
 
   framework: 'cucumber',
 
