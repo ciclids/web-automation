@@ -1,4 +1,5 @@
 pipeline{
+ 
   agent {
     label 'agent-node'
   }
@@ -8,7 +9,7 @@ pipeline{
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins_ssh_git', url: 'https://github.com/ciclids/web-automation']]])
         sh 'npm install'
         //sh 'npm run selenium'
-        sh 'npm run test'
+        sh 'HUB_HOST=172.17.0.6 npm run test'
       }
     }
   }
