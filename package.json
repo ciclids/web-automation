@@ -11,7 +11,7 @@
     "selenium:stop": "docker-compose down -v",
     "test": "./node_modules/.bin/cross-env VNC_SUPPORT=false DEBUG_TEST=false npm run test:run:local",
     "test:vnc": "./node_modules/.bin/cross-env VNC_SUPPORT=true DEBUG_TEST=false npm run test:run:local",
-    "test:run:local": "npm run report:clean && npm run test:run && npm run report || npm run report",
+    "test:run:local": "npm run test:run && npm run report || npm run report",
     "test:run": "node ./node_modules/@wdio/cli/bin/wdio.js --spec",
     "report": "node ./cucumber.report.conf.js",
     "report:clean": "rimraf ./report",
