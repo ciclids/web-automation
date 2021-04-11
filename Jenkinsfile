@@ -18,7 +18,7 @@ pipeline{
           }
         
         }
-       stage('Test On agent node') {
+       stage('Test On agent node 2') {
           agent {
               label "agent-node"
           }
@@ -29,7 +29,7 @@ pipeline{
             sh 'HUB_HOST=172.17.0.6 npm run test'
           }
         }  
-       stage('Test On agent node') {
+       stage('Test On agent node 3') {
           agent {
               label "agent-node"
           }
