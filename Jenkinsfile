@@ -1,4 +1,7 @@
 pipeline{
+  agent {
+    label 'principal'
+  }
   stages{
     stage('Run Tests') {
       parallel {
