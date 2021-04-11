@@ -1,4 +1,3 @@
-import { Given } from 'cucumber';
 import { closeAllButFirstTab } from '../support/action/closeAllButFirstTab';
 import { openWebsite } from '../support/action/openWebsite';
 import { setWindowSize } from '../support/action/setWindowSize';
@@ -19,108 +18,109 @@ import { checkUrl } from '../support/check/checkUrl';
 import { compareText } from '../support/check/compareText';
 import { isDisplayed } from '../support/check/isDisplayed';
 import { isEnabled } from '../support/check/isEnabled';
+import { Given } from "@cucumber/cucumber";
 
 Given(
-  /^I open the (url|site) "([^"]*)?"$/,
-  openWebsite,
+    /^I open the (url|site) "([^"]*)?"$/,
+    openWebsite,
 );
 
 Given(
-  /^the element "([^"]*)?" is( not)* displayed$/,
-  isDisplayed,
+    /^the element "([^"]*)?" is( not)* displayed$/,
+    isDisplayed,
 );
 
 Given(
-  /^the element "([^"]*)?" is( not)* enabled$/,
-  isEnabled,
+    /^the element "([^"]*)?" is( not)* enabled$/,
+    isEnabled,
 );
 
 Given(
-  /^the element "([^"]*)?" is( not)* selected$/,
-  checkSelected,
+    /^the element "([^"]*)?" is( not)* selected$/,
+    checkSelected,
 );
 
 Given(
-  /^the checkbox "([^"]*)?" is( not)* checked$/,
-  checkSelected,
+    /^the checkbox "([^"]*)?" is( not)* checked$/,
+    checkSelected,
 );
 
 Given(
-  /^there is (an|no) element "([^"]*)?" on the page$/,
-  checkElementExists,
+    /^there is (an|no) element "([^"]*)?" on the page$/,
+    checkElementExists,
 );
 
 Given(
-  /^the title is( not)* "([^"]*)?"$/,
-  checkTitle,
+    /^the title is( not)* "([^"]*)?"$/,
+    checkTitle,
 );
 
 Given(
-  /^the element "([^"]*)?" contains( not)* the same text as element "([^"]*)?"$/,
-  compareText,
+    /^the element "([^"]*)?" contains( not)* the same text as element "([^"]*)?"$/,
+    compareText,
 );
 
 Given(
-  /^the (button|element) "([^"]*)?"( not)* matches the text "([^"]*)?"$/,
-  checkEqualsText,
+    /^the (button|element) "([^"]*)?"( not)* matches the text "([^"]*)?"$/,
+    checkEqualsText,
 );
 
 Given(
-  /^the (button|element|container) "([^"]*)?"( not)* contains the text "([^"]*)?"$/,
-  checkContainsText,
+    /^the (button|element|container) "([^"]*)?"( not)* contains the text "([^"]*)?"$/,
+    checkContainsText,
 );
 
 Given(
-  /^the (button|element) "([^"]*)?"( not)* contains any text$/,
-  checkContainsAnyText,
+    /^the (button|element) "([^"]*)?"( not)* contains any text$/,
+    checkContainsAnyText,
 );
 
 Given(
-  /^the (button|element) "([^"]*)?" is( not)* empty$/,
-  checkIsEmpty,
+    /^the (button|element) "([^"]*)?" is( not)* empty$/,
+    checkIsEmpty,
 );
 
 Given(
-  /^the page url is( not)* "([^"]*)?"$/,
-  checkUrl,
+    /^the page url is( not)* "([^"]*)?"$/,
+    checkUrl,
 );
 
 Given(
-  /^the( css)* attribute "([^"]*)?" from element "([^"]*)?" is( not)* "([^"]*)?"$/,
-  checkProperty,
+    /^the( css)* attribute "([^"]*)?" from element "([^"]*)?" is( not)* "([^"]*)?"$/,
+    checkProperty,
 );
 
 Given(
-  /^the cookie "([^"]*)?" contains( not)* the value "([^"]*)?"$/,
-  checkCookieContent,
+    /^the cookie "([^"]*)?" contains( not)* the value "([^"]*)?"$/,
+    checkCookieContent,
 );
 
 Given(
-  /^the cookie "([^"]*)?" does( not)* exist$/,
-  checkCookieExists,
+    /^the cookie "([^"]*)?" does( not)* exist$/,
+    checkCookieExists,
 );
 
 Given(
-  /^the element "([^"]*)?" is( not)* ([\d]+)px (broad|tall)$/,
-  checkDimension,
+    /^the element "([^"]*)?" is( not)* ([\d]+)px (broad|tall)$/,
+    checkDimension,
 );
 
 Given(
-  /^the element "([^"]*)?" is( not)* positioned at ([\d]+)px on the (x|y) axis$/,
-  checkOffset,
+    /^the element "([^"]*)?" is( not)* positioned at ([\d]+)px on the (x|y) axis$/,
+    checkOffset,
 );
 
 Given(
-  /^I have a screen that is ([\d]+) by ([\d]+) pixels$/,
-  setWindowSize,
+    /^I have a screen that is ([\d]+) by ([\d]+) pixels$/,
+    setWindowSize,
 );
 
 Given(
-  /^I have closed all but the first (window|tab)$/,
-  closeAllButFirstTab,
+    /^I have closed all but the first (window|tab)$/,
+    closeAllButFirstTab,
 );
 
 Given(
-  /^a (alertbox|confirmbox|prompt) is( not)* opened$/,
-  checkModal,
+    /^a (alertbox|confirmbox|prompt) is( not)* opened$/,
+    checkModal,
 );

@@ -13,8 +13,6 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
       - START_XVFB=false
-    depends_on: 
-      - selenium-hub
 
   firefox:
     image: selenium/node-firefox:${SELENIUM_VERSION}
@@ -26,8 +24,6 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
       - START_XVFB=false
-    depends_on: 
-      - selenium-hub
 
   node:
     container_name: e2e-tests-container

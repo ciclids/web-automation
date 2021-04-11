@@ -1,4 +1,4 @@
-import { When } from 'cucumber';
+import { When } from '@cucumber/cucumber';
 import { clearInputField } from '../support/action/clearInputField';
 import { clickElement } from '../support/action/clickElement';
 import { closeLastOpenedWindow } from '../support/action/closeLastOpenedWindow';

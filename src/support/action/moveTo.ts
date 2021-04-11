@@ -5,8 +5,8 @@
  * @param  {String}   y        Y coordinate to move to
  */
 export function moveTo(selector: string, x: string, y: string): void {
-  const intX = parseInt(x, 10) || undefined;
-  const intY = parseInt(y, 10) || undefined;
+    const xOffset = parseInt(x, 10) || undefined;
+    const yOffset = parseInt(y, 10) || undefined;
 
-  $(selector).moveTo(intX, intY);
+    $(selector).moveTo({ xOffset, yOffset });
 }

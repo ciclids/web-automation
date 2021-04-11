@@ -1,4 +1,4 @@
-import { Then } from 'cucumber';
+import { Then } from '@cucumber/cucumber';
 import { waitFor } from '../support/action/waitFor';
 import { waitForDisplayed } from '../support/action/waitForDisplayed';
 import { checkClass } from '../support/check/checkClass';

@@ -7,22 +7,22 @@ import { serverConfig } from './server.config';
 import { testsConfig } from './tests.config';
 
 export const config = {
-  runner: 'local',
-  baseUrl: 'http://172.17.0.6',
+    runner: 'local',
+    baseUrl: process.env.HUB_HOST || 'localhost',
 
-  framework: 'cucumber',
+    framework: 'cucumber',
 
-  maxInstances: process.env.DEBUG_TESTS === 'true' ? 1 : 2,
-  capabilities: [
-    capabilitiesChromeConfig,
-    capabilitiesFirefoxConfig,
-  ],
+    maxInstances: process.env.DEBUG_TESTS === 'true' ? 1 : 2,
+    capabilities: [
+        capabilitiesChromeConfig,
+        capabilitiesFirefoxConfig,
+    ],
 
-  services: [],
+    services: [],
 
-  ...serverConfig,
-  ...testsConfig,
-  ...loggingConfig,
-  ...reportingConfig,
-  ...hooksConfig,
+    ...serverConfig,
+    ...testsConfig,
+    ...loggingConfig,
+    ...reportingConfig,
+    ...hooksConfig,
 };

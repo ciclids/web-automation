@@ -1,8 +1,11 @@
-import { After, Before, HookScenarioResult } from 'cucumber';
-import { addObject, addScreenshot } from '../support/lib/context';
+import { After, Before } from '@cucumber/cucumber';
+import { Capabilities } from "@wdio/types";
+import { addObject, addScreenshot } from "../support/lib/context";
+
+const cap = browser.capabilities as Capabilities.Capabilities;
 
 Before({ tags: '@OnlyChrome' }, () => {
-  if (browser.capabilities.browserName !== 'chrome') {
+  if (cap.browserName !== 'chrome') {
     return 'skipped';
   }
 
@@ -10,14 +13,14 @@ Before({ tags: '@OnlyChrome' }, () => {
 });
 
 Before({ tags: '@OnlyFirefox' }, () => {
-  if (browser.capabilities.browserName !== 'firefox') {
+  if (cap !== 'firefox') {
     return 'skipped';
   }
 
   return undefined;
 });
 
-After({ tags: '@Verbose' }, (scenario: HookScenarioResult) => {
+After({ tags: '@Verbose' }, (scenario: any) => {
   addObject({
     browser: {
       url: browser.getUrl(),
